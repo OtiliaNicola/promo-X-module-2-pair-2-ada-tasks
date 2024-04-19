@@ -9,3 +9,7 @@ const tasks = [
       completed: false,
     },
   ];
+
+  // funcin que recoge el evento clieck
+  // const xx = { name: 'Recoger setas en el campo', completed: true }
+  
