@@ -1,5 +1,7 @@
 'use strict';
 
+const btnAdd = document.querySelector ('.js-btn-add');
+
 const tasks = [
     { name: 'Recoger setas en el campo', completed: true },
     { name: 'Comprar pilas', completed: true },
@@ -10,6 +12,9 @@ const tasks = [
     },
   ];
 
+  function 
+
+btnAdd.addEventListener ('click', handleClick);
+
   // funcin que recoge el evento clieck
   // const xx = { name: 'Recoger setas en el campo', completed: true }
-  
