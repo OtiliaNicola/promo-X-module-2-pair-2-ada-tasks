@@ -53,10 +53,22 @@ const cargaDatos = () => {
 };
 
 cargaDatos();
-
-
-
-
   // funcin que recoge el evento clieck
   // const xx = { name: 'Recoger setas en el campo', completed: true }
   
+
+//PONER EN FUNCIONAMIENTO AÑADIR NUEVA TAREA
+
+//1-> creo const del botón Agregar.
+const btnAdd = document.querySelector('.js-btn-add');
+//1.1-> creo const del input
+const textTask = document.querySelector('.js-text-task-add')
+
+//2-> creo la función para añadir tareas
+function addTask() {
+  event.preventDefalut();
+  console.log('lsdfjdk');
+  const addText = taskInput.value.push();
+  if (addText !== ""); 
+  addTask.claslist.addeventlistener('click', handleclick);
+};
