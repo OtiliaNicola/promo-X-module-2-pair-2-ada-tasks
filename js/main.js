@@ -44,7 +44,12 @@ const cargaDatos = () => {
     // Crear un nuevo elemento <li>
     let nuevoElemento = document.createElement("li");
 
-    // Agregar texto al nuevo elemento <li>
+    // Agregar texto al nuevo elemento <li> METER CHECKBOX
+    //SI TASCK ES VERDADERO AÑADIR LA CLASE DENTRO DEL FORM
+  if (task.completed === true) {
+    nuevoElemento.classList.add ('tachado')
+  }
+  
     nuevoElemento.textContent = task.name;
 
     // Agregar el nuevo elemento <li> a la lista <ul>
@@ -55,9 +60,22 @@ const cargaDatos = () => {
 cargaDatos();
   // funcin que recoge el evento clieck
   // const xx = { name: 'Recoger setas en el campo', completed: true }
-  
+  const taskFilter = document.querySelector ('.js-text-task-filter');
+  //taskFilter() => { }
 
-//PONER EN FUNCIONAMIENTO AÑADIR NUEVA TAREA
+
+//2--> TAREA 2- tachado
+
+
+
+
+
+
+
+
+
+
+/*PONER EN FUNCIONAMIENTO AÑADIR NUEVA TAREA
 
 //1-> creo const del botón Agregar.
 const btnAdd = document.querySelector('.js-btn-add');
@@ -71,4 +89,4 @@ function addTask() {
   const addText = taskInput.value.push();
   if (addText !== ""); 
   addTask.claslist.addeventlistener('click', handleclick);
-};
+};*/
