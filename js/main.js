@@ -36,11 +36,7 @@ const tasks = [
 // Obtener el elemento <ul> al que deseas agregar el <li>
 const taskList = document.querySelector('.task-list');
 
-// Crear un input tipo checkbox
-//let checkbox = document.createElement("input");
-//checkbox.type = "checkbox";
-//checkbox.checked = task.completed; // Estado inicial del checkbox
-//checkbox.disabled = true; 
+
 
 const cargaDatos = () => {
   // Itero la lista de tasks
@@ -49,15 +45,24 @@ const cargaDatos = () => {
 
     // Crear un nuevo elemento <li>
     let nuevoElemento = document.createElement("li");
-    nuevoElemento.innerHTML = `
-    <li><input type="checkbox" ${task.completed 'checked' : ''}</li>';
+    let inputli= document.createElement('input');
+    inputli.type='checkbox';
+    nuevoElemento.appendChild(inputli);
+
+    let taskName= document.createElement('span');
+    taskName.innerHTML = task.name;
+    nuevoElemento.appendChild(taskName);
+   
+
+    
 
     // Agregar texto al nuevo elemento <li> METER CHECKBOX
     //SI TASCK ES VERDADERO AÑADIR LA CLASE DENTRO DEL FORM
   if (task.completed === true) {
     nuevoElemento.classList.add ('tachado')
+     //Agregar que checkbox este marcado cuando es true 
   }
-    nuevoElemento.textContent = task.name;
+
    
 
     // Agregar el nuevo elemento <li> a la lista <ul>
