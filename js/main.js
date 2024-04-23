@@ -49,6 +49,8 @@ const cargaDatos = () => {
 
     // Crear un nuevo elemento <li>
     let nuevoElemento = document.createElement("li");
+    nuevoElemento.innerHTML = `
+    <li><input type="checkbox" ${task.completed 'checked' : ''}</li>';
 
     // Agregar texto al nuevo elemento <li> METER CHECKBOX
     //SI TASCK ES VERDADERO AÑADIR LA CLASE DENTRO DEL FORM
