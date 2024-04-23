@@ -36,6 +36,12 @@ const tasks = [
 // Obtener el elemento <ul> al que deseas agregar el <li>
 const taskList = document.querySelector('.task-list');
 
+// Crear un input tipo checkbox
+//let checkbox = document.createElement("input");
+//checkbox.type = "checkbox";
+//checkbox.checked = task.completed; // Estado inicial del checkbox
+//checkbox.disabled = true; 
+
 const cargaDatos = () => {
   // Itero la lista de tasks
   for (const task of tasks) {
@@ -49,8 +55,8 @@ const cargaDatos = () => {
   if (task.completed === true) {
     nuevoElemento.classList.add ('tachado')
   }
-  
     nuevoElemento.textContent = task.name;
+   
 
     // Agregar el nuevo elemento <li> a la lista <ul>
     taskList.appendChild(nuevoElemento);
