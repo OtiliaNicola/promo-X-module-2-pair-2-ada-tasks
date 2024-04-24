@@ -43,29 +43,27 @@ const cargaDatos = () => {
   for (const task of tasks) {
     console.log("task: " + task.name);
 
-    // Crear un nuevo elemento <li>
+    // Crea un nuevo elemento <li>
     let list = document.createElement("li");
-    let listInput= document.createElement('input');
-    listInput.type='checkbox';
+
+    // Crea un nuevo elemento <input>
+    let listInput = document.createElement("input");
+    listInput.type = "checkbox";
     list.appendChild(listInput);
 
-    let taskText= document.createElement('span');
+    // Crea un nuevo elemento <span> para el nombre de la tarea
+    let taskText = document.createElement("span");
     taskText.innerHTML = task.name;
     list.appendChild(taskText);
-   
 
-    
+    if (task.completed === true) {
+      // Tacha e texto en el <li>
+      list.classList.add("tachado");
+      // Checkea el input
+      listInput.checked = true;
+    }
 
-    // Agregar texto al nuevo elemento <li> METER CHECKBOX
-    //SI TASCK ES VERDADERO AÑADIR LA CLASE DENTRO DEL FORM
-  if (task.completed === true) {
-    list.classList.add ('tachado')
-     //Agregar que checkbox este marcado cuando es true 
-  }
-
-   
-
-    // Agregar el nuevo elemento <li> a la lista <ul>
+    // Agrega el nuevo elemento <li> a la lista <ul>
     taskList.appendChild(list);
   }
 };
