@@ -44,14 +44,14 @@ const cargaDatos = () => {
     console.log("task: " + task.name);
 
     // Crear un nuevo elemento <li>
-    let nuevoElemento = document.createElement("li");
-    let inputli= document.createElement('input');
-    inputli.type='checkbox';
-    nuevoElemento.appendChild(inputli);
+    let list = document.createElement("li");
+    let listInput= document.createElement('input');
+    listInput.type='checkbox';
+    list.appendChild(listInput);
 
-    let taskName= document.createElement('span');
-    taskName.innerHTML = task.name;
-    nuevoElemento.appendChild(taskName);
+    let taskText= document.createElement('span');
+    taskText.innerHTML = task.name;
+    list.appendChild(taskText);
    
 
     
@@ -59,14 +59,14 @@ const cargaDatos = () => {
     // Agregar texto al nuevo elemento <li> METER CHECKBOX
     //SI TASCK ES VERDADERO AÑADIR LA CLASE DENTRO DEL FORM
   if (task.completed === true) {
-    nuevoElemento.classList.add ('tachado')
+    list.classList.add ('tachado')
      //Agregar que checkbox este marcado cuando es true 
   }
 
    
 
     // Agregar el nuevo elemento <li> a la lista <ul>
-    taskList.appendChild(nuevoElemento);
+    taskList.appendChild(list);
   }
 };
 
