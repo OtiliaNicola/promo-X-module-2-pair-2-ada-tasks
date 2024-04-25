@@ -7,18 +7,23 @@ const handleCheckboxClick = (event) => {
   // Se obtiene la posicion del li en el array de tareas, para luego tacharla
   const arrayIdCheckbox = checkbox.id.split('_');
   // ['check', '0']
-  const posicionLi = arrayIdCheckbox[1];
+  const posicionTarea = arrayIdCheckbox[1];
   // Armo el id del li que voy a modificar
-  const idLi = `list_${posicionLi}`;
+  const idLi = `list_${posicionTarea}`;
   // Obtengo el li
   const liATachar = document.querySelector(`#${idLi}`);
 
   // Modifico el li de acuerdo si el checkbox esta marcado (true) o no (false)
+  const task = tasks[posicionTarea];
   if (checkbox.checked) {
+    task.completed = true;
     liATachar.classList.add('tachado');
   } else {
+    task.completed = false;
     liATachar.classList.remove('tachado');
   }
+
+  // console.log('tarea: ' + task.name + '; completed: ' + task.completed);
 };
 
 const tasks = [
@@ -46,11 +51,11 @@ const cargaDatos = () => {
     li.id = `list_${i}`;
 
     // Crea un nuevo elemento <input>
-    let listInput = document.createElement("input");
-    listInput.type = "checkbox";
-    listInput.id = `check_${i}`; // el id del checkbox se corresponde con el del li
-    listInput.addEventListener('click', handleCheckboxClick);
-    li.appendChild(listInput);
+    let input = document.createElement("input");
+    input.type = "checkbox";
+    input.id = `check_${i}`; // el id del checkbox se corresponde con el del li
+    input.addEventListener('click', handleCheckboxClick);
+    li.appendChild(input);
 
     // Crea un nuevo elemento <span> para el nombre de la tarea
     let taskText = document.createElement("span");
@@ -61,7 +66,7 @@ const cargaDatos = () => {
       // Tacha e texto en el <li>
       li.classList.add("tachado");
       // Checkea el input
-      listInput.checked = true;
+      input.checked = true;
     }
 
     // Agrega el nuevo elemento <li> a la lista <ul>
