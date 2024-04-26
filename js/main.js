@@ -1,5 +1,15 @@
 'use strict';
 
+//boton buscar
+const btnFilter = document.querySelector(`.js-btn-filter`);
+const inputFilter = document.querySelector('.js-text-task-filter');
+
+function filterTask ()=>{
+  const input = inputFilter.value
+}
+//llamar al boton
+btnFilter.addEventListener('click', handleClick);
+
 const handleCheckboxClick = (event) => {
   const checkbox = event.target;
   console.log(`ID del checkbox: ${checkbox.id}, Valor: ${checkbox.checked}`);
@@ -12,7 +22,7 @@ const handleCheckboxClick = (event) => {
   const idLi = `list_${posicionTarea}`;
   // Obtengo el li
   const liATachar = document.querySelector(`#${idLi}`);
-
+  
   // Modifico el li de acuerdo si el checkbox esta marcado (true) o no (false)
   const task = tasks[posicionTarea];
   if (checkbox.checked) {
